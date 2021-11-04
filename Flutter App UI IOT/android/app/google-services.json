@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "634410684168",
+    "firebase_url": "https://lastapp-40851-default-rtdb.firebaseio.com",
+    "project_id": "lastapp-40851",
+    "storage_bucket": "lastapp-40851.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634410684168:android:20a75b80cb9f6fba4d66bd",
+        "android_client_info": {
+          "package_name": "com.geec.lastappl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634410684168-5kq8mfiqmhvknsev9pas8scird637sa6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.geec.lastappl",
+            "certificate_hash": "ad679fe766dcacbbd4343710e15d3a35d6923164"
+          }
+        },
+        {
+          "client_id": "634410684168-mi05i987p3p9r0orcb6ojlndnf763fne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmmzXdz1cpOuKbpDSat5-ZrobqOy3IHBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634410684168-mi05i987p3p9r0orcb6ojlndnf763fne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
