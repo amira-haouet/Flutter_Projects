@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Firestore Gerer Produit "),
       ),
-
+      //Stream Builer
       body: StreamBuilder(
         stream: FireStoreDbService.products$,
         builder: (context, AsyncSnapshot<List<Product>> snapshot) {
@@ -31,6 +31,8 @@ class MainScreen extends StatelessWidget {
           );
         },
       ),
+
+      // add icons
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
