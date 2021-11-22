@@ -37,19 +37,13 @@ class FireStoreDbService {
     return await productsCollection.doc(id).delete();
   }
 
-  // Get products stream
   static Stream<List<Product>> get products$ {
     FireStoreDbService.ensureAuthenticated();
     return productsCollection.snapshots().map(_productsListFromSnapshot);
 
-    // return productsCollection.snapshots().map(
-    //       (snapshot) => snapshot.docs
-    //           .map((doc) => Product(doc.id, doc["name"], doc["price"]))
-    //           .toList(),
-    //     );
+   
   }
 
-  // ----- Mappers -----
   static List<Product> _productsListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs
         .map((doc) => Product(doc.id, doc["name"], doc["price"]))

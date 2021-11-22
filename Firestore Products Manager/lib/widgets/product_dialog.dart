@@ -20,7 +20,7 @@ class ProductDialog extends StatelessWidget {
     );
 
     return AlertDialog(
-      title: Text(isNew ? 'Add a new product' : 'Edit product'),
+      title: Text(isNew ? 'Ajouter un produit' : 'modifier produit'),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),
@@ -30,20 +30,20 @@ class ProductDialog extends StatelessWidget {
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
-                hintText: "Name",
+                hintText: "Nom prod",
               ),
             ),
             TextField(
               controller: priceController,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                hintText: "Price",
+                hintText: "prix",
               ),
             ),
             ElevatedButton(
               onPressed: () async {
                 switch (isNew) {
-                  case true: // -- Create a new product
+                  case true: // --ajout produit 
                     if (nameController.text.isEmpty ||
                         priceController.text.isEmpty) {
                       return Navigator.pop(context);
@@ -53,7 +53,7 @@ class ProductDialog extends StatelessWidget {
                       int.parse(priceController.text),
                     );
                     break;
-                  case false: // -- Update an existing product
+                  case false: // -- Update produit existant
                     FireStoreDbService.updateProduct(
                       product!.id,
                       nameController.text,
@@ -61,10 +61,10 @@ class ProductDialog extends StatelessWidget {
                     );
                     break;
                 }
-                // -- Close the dialog
+              
                 Navigator.pop(context);
               },
-              child: Text(isNew ? 'Add' : 'Update'),
+              child: Text(isNew ? 'Ajouter' : 'Modifier'),
             ),
           ],
         ),

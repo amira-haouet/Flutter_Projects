@@ -11,10 +11,9 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Firestore Products Manager"),
+        title: const Text("Firestore Gerer Produit "),
       ),
-      // -- Using a stream builder will update the UI
-      // -- in real-time whenever data is changed in firebase
+
       body: StreamBuilder(
         stream: FireStoreDbService.products$,
         builder: (context, AsyncSnapshot<List<Product>> snapshot) {
