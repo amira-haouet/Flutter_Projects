@@ -1,6 +1,6 @@
 # Flutter_Projects
 
-Collection of flutter apps
+Collections of flutter apps
 
 # Languages and Tools 
 
