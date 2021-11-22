@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutterauth">
+    package="com.example.flutter_auth_firebase">
    <application
-        android:label="flutterauth"
-        android:icon="@mipmap/ic_launcher">
+        android:label="flutter_auth_firebase"
+        android:icon="@mipmap/firebase">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

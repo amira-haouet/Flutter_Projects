@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.untitled2">
    <application
-        android:label="untitled2"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Json"
+        android:icon="@mipmap/json">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
