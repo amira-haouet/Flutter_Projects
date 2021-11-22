@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_auth_firebase">
+    package="com.example.flutter_authentification_withfirebase">
    <application
-        android:label="flutter_auth_firebase"
-        android:icon="@mipmap/firebase">
+        android:label="flutter_authentification_withfirebase"
+        android:icon="@mipmap/login">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -1,6 +1,6 @@
 {
-    "name": "flutter_auth_firebase",
-    "short_name": "flutter_auth_firebase",
+    "name": "flutter_authentification_withfirebase",
+    "short_name": "flutter_authentification_withfirebase",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
