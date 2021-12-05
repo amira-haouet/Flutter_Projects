@@ -20,6 +20,7 @@ class _MainScreenState extends State<MainScreen> {
         Icons.search,
         color: Colors.white,
       ),
+      
       onPressed: () {
         // do something
       },
