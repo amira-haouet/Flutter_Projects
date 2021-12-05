@@ -14,6 +14,18 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Search Books "),
+        actions: <Widget>[
+    IconButton(
+      icon: Icon(
+        Icons.search,
+        color: Colors.white,
+      ),
+      onPressed: () {
+        // do something
+      },
+    )
+  ],
+       
       ),
       body: const BookListScreen(),
        drawer: Drawer(
