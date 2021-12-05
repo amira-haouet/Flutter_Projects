@@ -43,16 +43,24 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: const Text("Fomulaire avec validation"),
       ),
+      
       body: Center(
         child: SingleChildScrollView(
+          
           child: Card(
+            
             elevation: 8.0,
+
             child: SizedBox(
+              
               height: 350,
               width: 300,
+
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
+                
                 child: Form(
+                  
                   autovalidateMode: _enableAutoValidation
                       ? AutovalidateMode.onUserInteraction
                       : AutovalidateMode.disabled,
@@ -158,6 +166,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
+            
           ),
         ),
       ),
