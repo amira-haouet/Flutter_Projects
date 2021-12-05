@@ -109,7 +109,7 @@ class NameDetail extends StatelessWidget {
                   name,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.green,
+                      color: Colors.deepOrange,
                       fontSize: 24),
                 ),
                 Text(
@@ -124,7 +124,7 @@ class NameDetail extends StatelessWidget {
               Icon(
                 Icons.star,
                 size: 40,
-                color: Colors.orange,
+                color: Colors.yellow,
               ),
               Text(
                 "12",

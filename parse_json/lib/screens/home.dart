@@ -33,6 +33,8 @@ class _HomePageState extends State<HomePage> {
         }
         loading = false;
       });
+
+      => old version of flutter
     }*/
 
     /*if (responseData.statusCode == 200) {
@@ -111,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
-                                    color: Colors.green),
+                                    color: Colors.deepPurple),
                               ),
                               Text(nDataList.email),
                               Text(nDataList.phone),
