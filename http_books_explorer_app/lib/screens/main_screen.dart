@@ -16,6 +16,14 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text("Search Books "),
       ),
       body: const BookListScreen(),
+       drawer: Drawer(
+        child: Container(
+          color: Colors.amberAccent,
+          child: Center(
+            
+          ),
+        ),
+      ),
     );
   }
 }
