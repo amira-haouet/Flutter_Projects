@@ -20,3 +20,8 @@ class MyApp extends StatelessWidget {
  );
  }
 }
+
+class Home {
+    const Home({Key? key}) : super(key1: key);
+
+}
