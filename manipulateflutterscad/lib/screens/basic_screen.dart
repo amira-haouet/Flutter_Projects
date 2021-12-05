@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:manipulateflutterscad/widget/immutable_widget.dart';
 
 class BasicScreen extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
         debugShowCheckedModeBanner: false;
