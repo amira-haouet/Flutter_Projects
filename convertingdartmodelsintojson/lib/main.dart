@@ -16,12 +16,8 @@ class MyApp extends StatelessWidget {
  theme: ThemeData(
  primarySwatch: Colors.green,
  ),
- home: Home(),
+
  );
  }
 }
 
-class Home {
-    const Home({Key? key}) : super(key1: key);
-
-}
