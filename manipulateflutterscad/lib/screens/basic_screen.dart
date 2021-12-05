@@ -4,8 +4,12 @@ import 'package:manipulateflutterscad/widget/immutable_widget.dart';
 class BasicScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+        debugShowCheckedModeBanner: false;
+
     return Scaffold(
+      
       appBar: AppBar(
+
         backgroundColor: Colors.indigo,
         title: Text('Welcome to Flutter'),
         actions: <Widget>[
@@ -19,6 +23,14 @@ class BasicScreen extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 1.0,
           child: ImmutableWidget(),
+        ),
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Text("I'm a Drawer!"),
+          ),
         ),
       ),
     );

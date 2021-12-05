@@ -6,6 +6,7 @@ void main() => runApp(StaticApp());
 class StaticApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    debugShowCheckedModeBanner: false;
     return MaterialApp(
       home: BasicScreen(),
     );
