@@ -4,7 +4,7 @@ import 'package:fuitmanager_sqflite/screens/homedetailpage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
-import 'dart:convert';
+import 'dart:convert' as convert;
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,9 +22,9 @@ class _HomePageState extends State<HomePage> {
     });
 
     final responseData =
-        await http.get("https://jsonplaceholder.typicode.com/users");
+        await http.get(Uri.parse("https://jsonplaceholder.typicode.com/users"));
 
-    if (responseData.statusCode == 200) {
+    /* if (responseData.statusCode == 200) {
       final data = jsonDecode(responseData.body);
       print(data);
       setState(() {
@@ -33,6 +33,32 @@ class _HomePageState extends State<HomePage> {
         }
         loading = false;
       });
+    }*/
+
+    /*if (responseData.statusCode == 200) {
+      var jsonResponse =
+          convert.jsonDecode(responseData.body) as Map<String, dynamic>;
+      var itemCount = jsonResponse['totalItems'];
+      print('Number of books about http: $itemCount.');
+    } else {
+      print('Request failed with status: ${responseData.statusCode}.');
+    }
+*/
+
+     if (responseData.statusCode == 200) {
+      print(convert
+          .jsonDecode(responseData.body)
+          .runtimeType); // _InternalLinkedHashMap<String, dynamic>
+
+      listModel = (convert.jsonDecode(responseData.body) as List)
+          .map((data) => User.fromJson(data))
+          .toList();
+
+      setState(() {
+        loading = false;
+      });
+    } else {
+      throw Exception('Failed to load');
     }
   }
 
