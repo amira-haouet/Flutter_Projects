@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                                     )));
                       },
                       child: Card(
-                        color: Colors.amber[100],
+                        color: Colors.purple[100],
                         margin: EdgeInsets.all(15),
                         child: Padding(
                           padding: EdgeInsets.all(16),

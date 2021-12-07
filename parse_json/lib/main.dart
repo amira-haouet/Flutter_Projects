@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: PageHome(),
       debugShowCheckedModeBanner: false,
@@ -36,7 +36,7 @@ class PageHome extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => HomePage()));
               },
               child: Text('Get List JSON User'),
-              color: Colors.blue,
+              color: Colors.deepOrange,
               textColor: Colors.white,
             ),
           ],
