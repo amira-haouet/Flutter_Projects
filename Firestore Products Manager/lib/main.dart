@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: "Firestore Products Manager",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.deepOrange
       ),
       home: const MainScreen(),
     );
