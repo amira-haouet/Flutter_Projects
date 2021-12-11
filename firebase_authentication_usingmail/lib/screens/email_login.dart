@@ -71,7 +71,7 @@ class _EmailLogInState extends State<EmailLogIn> {
                 child: isLoading
                     ? CircularProgressIndicator()
                     : ElevatedButton(
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.lightBlue)),
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             setState(() {

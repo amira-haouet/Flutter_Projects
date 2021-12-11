@@ -79,7 +79,7 @@ class _NavigateDrawerState extends State<NavigateDrawer> {
                   }
                 }),
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.purple,
             ),
           ),
           ListTile(

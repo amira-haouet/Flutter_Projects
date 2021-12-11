@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Meet Up',
+      title: 'Sign up with Firebase',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: IntroScreen(),
     );
@@ -37,7 +37,7 @@ class IntroScreen extends StatelessWidget {
         navigateAfterSeconds: result != null ? Home(uid: result.uid) : SignUp(),
         seconds: 5,
         title: new Text(
-          'Welcome To Meet up!',
+          'Welcome To my app!',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         image: Image.asset('assets/images/dart.png', fit: BoxFit.scaleDown),
@@ -45,6 +45,6 @@ class IntroScreen extends StatelessWidget {
         styleTextUnderTheLoader: new TextStyle(),
         photoSize: 100.0,
         onClick: () => print("flutter"),
-        loaderColor: Colors.red);
+        loaderColor: Colors.purple);
   }
 }

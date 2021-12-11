@@ -17,7 +17,7 @@ class SignUp extends StatelessWidget {
               Widget>[
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text("Meet Up",
+              child: Text("sign up",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -55,7 +55,7 @@ class SignUp extends StatelessWidget {
                     child: Text("Log In Using Email",
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Colors.blue)),
+                            color: Colors.greenAccent)),
                     onTap: () {
                       Navigator.push(
                         context,
