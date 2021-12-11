@@ -1,29 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import '../../home.dart';
 
-class EmailSignUp extends StatefulWidget {
+class EmailLogIn extends StatefulWidget {
   @override
-  _EmailSignUpState createState() => _EmailSignUpState();
+  _EmailLogInState createState() => _EmailLogInState();
 }
 
-class _EmailSignUpState extends State<EmailSignUp> {
-  bool isLoading = false;
+class _EmailLogInState extends State<EmailLogIn> {
   final _formKey = GlobalKey<FormState>();
-  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  DatabaseReference dbRef =
-      FirebaseDatabase.instance.reference().child("Users");
   TextEditingController emailController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController ageController = TextEditingController();
+
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Sign Up")),
+        appBar: AppBar(title: Text("Login")),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(
@@ -31,28 +26,9 @@ class _EmailSignUpState extends State<EmailSignUp> {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: TextFormField(
-                  controller: nameController,
-                  decoration: InputDecoration(
-                    labelText: "Enter User Name",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Enter User Name';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(20.0),
-                child: TextFormField(
                   controller: emailController,
                   decoration: InputDecoration(
-                    labelText: "Enter Email",
+                    labelText: "Enter Email Address",
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -60,28 +36,9 @@ class _EmailSignUpState extends State<EmailSignUp> {
                   // The validator receives the text that the user has entered.
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Enter an Email Address';
+                      return 'Enter Email Address';
                     } else if (!value.contains('@')) {
-                      return 'Please enter a valid email address';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(20.0),
-                child: TextFormField(
-                  controller: ageController,
-                  decoration: InputDecoration(
-                    labelText: "Enter Age",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Enter Age';
+                      return 'Please enter a valid email address!';
                     }
                     return null;
                   },
@@ -114,13 +71,13 @@ class _EmailSignUpState extends State<EmailSignUp> {
                 child: isLoading
                     ? CircularProgressIndicator()
                     : ElevatedButton(
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurpleAccent)),
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             setState(() {
                               isLoading = true;
                             });
-                            registerToFb();
+                            logInToFb();
                           }
                         },
                         child: Text('Submit'),
@@ -129,23 +86,18 @@ class _EmailSignUpState extends State<EmailSignUp> {
             ]))));
   }
 
-  void registerToFb() {
-    firebaseAuth
-        .createUserWithEmailAndPassword(
+  void logInToFb() {
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(
             email: emailController.text, password: passwordController.text)
         .then((result) {
-      dbRef.child(result.user!.uid).set({
-        "email": emailController.text,
-        "age": ageController.text,
-        "name": nameController.text
-      }).then((res) {
-        isLoading = false;
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => Home(uid: result.user!.uid)),
-        );
-      });
+      isLoading = false;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home(uid: result.user!.uid)),
+      );
     }).catchError((err) {
+      print(err.message);
       showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -153,7 +105,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
               title: Text("Error"),
               content: Text(err.message),
               actions: [
-                TextButton(
+                ElevatedButton(
                   child: Text("Ok"),
                   onPressed: () {
                     Navigator.of(context).pop();
@@ -163,14 +115,5 @@ class _EmailSignUpState extends State<EmailSignUp> {
             );
           });
     });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    nameController.dispose();
-    emailController.dispose();
-    passwordController.dispose();
-    ageController.dispose();
   }
 }
