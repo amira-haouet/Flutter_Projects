@@ -1,10 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:firebase_authentication_tutorial/screens/home.dart';
+import 'package:firebase_authentication_tutorial/screens/signup.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:twitter_login/entity/user.dart';
 
-import 'screens/home.dart';
-import 'screens/signup/signup.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,9 +21,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Sign up with Firebase',
+      title: 'Meet Up',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blue,
       ),
       home: IntroScreen(),
     );
@@ -37,7 +41,7 @@ class IntroScreen extends StatelessWidget {
         navigateAfterSeconds: result != null ? Home(uid: result.uid) : SignUp(),
         seconds: 5,
         title: new Text(
-          'Welcome To my app!',
+          'Welcome To Meet up!',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         image: Image.asset('assets/images/dart.png', fit: BoxFit.scaleDown),
@@ -45,6 +49,6 @@ class IntroScreen extends StatelessWidget {
         styleTextUnderTheLoader: new TextStyle(),
         photoSize: 100.0,
         onClick: () => print("flutter"),
-        loaderColor: Colors.purple);
+        loaderColor: Colors.red);
   }
 }

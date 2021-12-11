@@ -1,8 +1,9 @@
+import 'package:firebase_authentication_tutorial/screens/login_google/loginusingEmail/email_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
-import '../login_google/loginusingEmail/email_login.dart';
-import 'email_signup.dart';
+import 'signup/email_signup.dart';
+
 
 class SignUp extends StatelessWidget {
   final String title = "Sign Up";
@@ -17,7 +18,7 @@ class SignUp extends StatelessWidget {
               Widget>[
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text("sign up",
+              child: Text("Meet Up",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -55,7 +56,7 @@ class SignUp extends StatelessWidget {
                     child: Text("Log In Using Email",
                         style: TextStyle(
                             decoration: TextDecoration.underline,
-                            color: Colors.greenAccent)),
+                            color: Colors.blue)),
                     onTap: () {
                       Navigator.push(
                         context,

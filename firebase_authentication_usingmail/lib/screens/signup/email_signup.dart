@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_authentication_tutorial/screens/home.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-import '../home.dart';
 
 class EmailSignUp extends StatefulWidget {
   @override
@@ -114,7 +114,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
                 child: isLoading
                     ? CircularProgressIndicator()
                     : ElevatedButton(
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurpleAccent)),
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.lightBlue)),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             setState(() {

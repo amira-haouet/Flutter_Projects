@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_authentication_tutorial/screens/signup.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-import 'signup/signup.dart';
 
 class Home extends StatelessWidget {
   Home({this.uid});
@@ -32,8 +32,7 @@ class Home extends StatelessWidget {
             )
           ],
         ),
-        body: Center(child: Text('Welcome!'),
-        ),
+        body: Center(child: Text('Welcome!')),
         drawer: NavigateDrawer(uid: this.uid));
   }
 }
@@ -80,7 +79,7 @@ class _NavigateDrawerState extends State<NavigateDrawer> {
                   }
                 }),
             decoration: BoxDecoration(
-              color: Colors.purple,
+              color: Colors.blue,
             ),
           ),
           ListTile(
