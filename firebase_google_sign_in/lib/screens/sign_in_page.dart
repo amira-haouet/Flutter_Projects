@@ -171,7 +171,7 @@ class _GoogleSignInState extends State<GoogleSignIn> {
             content: Text(message),
             actions: [
               TextButton(
-                child: Text("Ok"),
+                child: Text("Ok sign with sucess"),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
