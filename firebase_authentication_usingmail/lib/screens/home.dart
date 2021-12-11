@@ -32,7 +32,8 @@ class Home extends StatelessWidget {
             )
           ],
         ),
-        body: Center(child: Text('Welcome!')),
+        body: Center(child: Text('Welcome!'),
+        ),
         drawer: NavigateDrawer(uid: this.uid));
   }
 }
