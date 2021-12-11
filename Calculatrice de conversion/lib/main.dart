@@ -87,7 +87,7 @@ class _MainScreenState extends State<MainScreen> {
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 22),
-                decoration: const InputDecoration(hintText: 'mettre le nombre ici'),
+                decoration: const InputDecoration(hintText: 'met le nombre ici'),
                 
               ),
               const SizedBox(height: 16),
