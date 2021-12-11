@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 
 
+//navigation menu
 
 class Navigate {
   static Map<String, Widget Function(BuildContext)> routes =   {
