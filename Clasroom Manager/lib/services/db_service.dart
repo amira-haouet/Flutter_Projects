@@ -55,7 +55,7 @@ class DbService {
   Future<List<Classroom>> getClassrooms() async {
     await openDB();
     if (_database == null) {
-      return Future.error("Cannot get classrooms list, database is null!");
+      return Future.error("Erreur!");
     }
     final List<Map<String, dynamic>> rawResult =
         await _database!.query("classrooms");
@@ -70,7 +70,7 @@ class DbService {
   Future<Classroom> updateClassroom(int id, String name) async {
     await openDB();
     if (_database == null) {
-      return Future.error("Cannot update classroom, database is null!");
+      return Future.error("Erreur!");
     }
     await _database!.update(
       "classrooms",
@@ -84,7 +84,7 @@ class DbService {
   Future<void> deleteClassroom(int id) async {
     await openDB();
     if (_database == null) {
-      return Future.error("Cannot delete classroom, database is null!");
+      return Future.error("Cannot delete Erreur!");
     }
     await _database!.delete(
       "classrooms",
@@ -103,7 +103,7 @@ class DbService {
   Future<List<Student>> getStudents(int classroomId) async {
     await openDB();
     if (_database == null) {
-      return Future.error("Cannot get students list, database is null!");
+      return Future.error("Erreur, database is null!");
     }
     final List<Map<String, dynamic>> rawResult = await _database!.query(
       "students",
@@ -126,7 +126,7 @@ class DbService {
   ) async {
     await openDB();
     if (_database == null) {
-      return Future.error("Cannot create a student, database is null!");
+      return Future.error("Erreur, database is null!");
     }
     final int id = await _database!.insert("students", {
       "lastname": lastname,
@@ -185,7 +185,7 @@ class DbService {
 
     try {
       await _database?.execute(
-          "INSERT INTO students VALUES(0, 'Doe', 'John', '15/04/1995', 0)");
+          "INSERT INTO students VALUES(0, 'amira', 'haouet', '15/04/1998', 0)");
     } catch (e) {
       log("Cannot insert the test student");
     }

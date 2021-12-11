@@ -69,9 +69,10 @@ class _MyHomePageState extends State<MyHomePage> {
       Pizza myPizza = Pizza.fromJson(pizza);
       myPizzas.add(myPizza);
     });
+     return myPizzas;
     // setState(() {
     //pizzaString = myString;
-    return myPizzas;
+   
     //});
   }
 }
