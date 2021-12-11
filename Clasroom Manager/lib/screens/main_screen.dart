@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SQLite Manager"),
+        title: const Text("SQLite Classroom Manager"),
       ),
       body: FutureBuilder(
         future: _dbService.getClassrooms(),
@@ -61,13 +61,7 @@ class _MainScreenState extends State<MainScreen> {
             context: context,
             builder: (context) => ClassroomDialog(
               onChanged: (e) {
-                //
-                // A cleaner way of updating would be using a StreamBuilder
-                // instead of a FutureBuilder & adding 'e' to the stream.
-                //
-                // An even cleaner way is to use a global provider,
-                // but that's better left for larger projects
-                //
+              
                 setState(() {
                   classrooms!.add(e);
                 });
